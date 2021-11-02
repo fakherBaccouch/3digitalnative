@@ -314,9 +314,10 @@ html {
     width: 350px;
   }
 
-  .faq_content_q_q {
+  .faq_content_q_q,.faq_content_a_a {
     font-size: 1.8rem;
   }
+  
 }
 @media screen and (max-width: 370px) {
   .faq_content_q_q {
@@ -350,7 +351,7 @@ html {
   height: auto;
   display: flex;
   flex-direction: column;
-  padding: 4% 0%;
+  padding: 4% 0% 0% 0%;
   justify-content: space-between;
   background-color: #202020;
   align-items: center;
@@ -536,10 +537,7 @@ header {
   position: absolute;
   left: 50%;
   top: 100%;
-  a{
-    height: 100%;
-    background-color: red;
-  }
+
 }
 .icon-scroll {
   width: 40px;
@@ -628,7 +626,7 @@ header {
 }
 
 .contactus {
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: white;
   padding: 4% 4%;
@@ -644,23 +642,27 @@ header {
     height: 550px;
     border-radius: 20px;
     z-index: 1;
+    background:linear-gradient(rgba(0, 0, 0,0.6), rgba(0, 0, 0, 0.6)), url("./images/gm.png");
+    background-position: center;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
   &_form {
     width: 375px;
-    height: 55%;
+    height: auto;
     background-color: #161616;
     position: absolute;
-    top: 40%;
+   
     z-index: 2;
     left: 40%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6% 2%;
+    padding: 2% 2%;
     border-radius: 3px;
     color: white;
     text-align: left !important;
+    justify-content: space-between;
     h1 {
       font-weight: 600;
       font-size: 2.5rem;
@@ -670,11 +672,149 @@ header {
       color: white;
       width: 100%;
     }
+    h3{
+      align-self: flex-start !important;
+      margin: 2rem 0 1.5rem 0;
+      font-weight: 400;
+      font-size: 1.4rem;
+    }
+    h4{
+      align-self: flex-start !important;
+      margin: 2rem 0 1.5rem 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
     button {
       width: 100%;
       font-size: 1.2rem;
       padding: 2%;
       font-weight: 400;
+      cursor: pointer;
     }
+    
+  
   }
+}
+@media screen and (max-width: 1350px) {
+
+.contactus_form{
+  left: 50%;
+  h1,h3{
+    left: 0%;
+    text-align: center !important;
+    align-self: center !important;
+  }
+}
+
+}
+@media screen and (max-width: 1100px) {
+.contactus_bg{
+  width:90%;
+}
+
+}
+@media screen and (max-width: 666px) {
+  .contactus{
+    padding: 0% 0;
+  }
+  .contactus_bg{
+    width:100%;
+  }
+  .contactus_form{
+    transform: translate(-50%,0%);
+  }
+  
+  }
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  color: white;
+  background: transparent;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#ccc;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#cccc; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#ccc; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#ccc; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#ccc; }
+  to 	{ width:0; background:transparent; }
 }
