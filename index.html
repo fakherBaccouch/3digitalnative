@@ -26,13 +26,13 @@
               <a href="index.html#services" onclick="closeNav()" class="nav-link">Services</a>
             </li>
             <li>
-              <a href="index.html#carousel" class="nav-link">Portfolio</a>
+              <a href="index.html#carousel"  onclick="closeNav()" class="nav-link">Portfolio</a>
             </li>
             <li>
-              <a href="index.html#faq" class="nav-link">Faq</a>
+              <a href="index.html#faq" onclick="closeNav()" class="nav-link">Faq</a>
             </li>
             <li>
-              <a href="#" class="nav-link">Contact us</a>
+              <a href="#" onclick="closeNav()" class="nav-link">Contact us</a>
             </li>
           </ul>
           <a href="#" id="nav-cta">EN</a>
@@ -40,7 +40,7 @@
       </div>
     </header>
     <section class="header">
-      <div class="icon-scroll"><a href="index.html#services"></a></div>
+      <div id="scroll" style="cursor: pointer;" class="icon-scroll"></div>
     </section>
     <section></section>
     <section id="services" class="services">
@@ -288,4 +288,13 @@
     myNav.classList.remove("show");
 
   }
+  var targetElm = document.getElementById('services'),  // reference to scroll target
+    scroll = document.getElementById('scroll');        // button that triggers the scroll
+  
+// bind "click" event to a button 
+scroll.addEventListener('click', function(){
+   targetElm.scrollIntoView()
+})
+
+  
 </script>
