@@ -10,25 +10,20 @@
     <header>
       <div class="container">
         <nav id="lol" class="nav">
-          <div onclick="hamburger()" class='hamburger'>
-          
-          <div class='hamburgerOne'></div>
-          <div class='hamburgerTwo'></div>
-          <div class='hamburgerThree'></div>
-
-          
-          
-          
+          <div onclick="hamburger()" class="hamburger">
+            <div class="hamburgerOne"></div>
+            <div class="hamburgerTwo"></div>
+            <div class="hamburgerThree"></div>
           </div>
           <a href="index.html" class="logo"
             ><img src="./images/loading.png"
           /></a>
           <ul class="nav-list">
             <li>
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="index.html" onclick="closeNav()" class="nav-link">Home</a>
             </li>
             <li>
-              <a href="index.html#services" class="nav-link">Services</a>
+              <a href="index.html#services" onclick="closeNav()" class="nav-link">Services</a>
             </li>
             <li>
               <a href="index.html#carousel" class="nav-link">Portfolio</a>
@@ -45,8 +40,7 @@
       </div>
     </header>
     <section class="header">
-      <div class="icon-scroll"></div>
-      
+      <div class="icon-scroll"><a href="index.html#services"></a></div>
     </section>
     <section></section>
     <section id="services" class="services">
@@ -89,11 +83,8 @@
       </div>
     </section>
     <section id="carousel" class="carousel">
-  <h1>    Carousel space here </h1>
-
-
+      <h1>Carousel space here</h1>
     </section>
-    
 
     <section id="faq" class="faq">
       <h1 class="section_title">Frequently Asked Questions(FAQ)</h1>
@@ -102,32 +93,30 @@
         <div class="faq_content_q">
           <div class="faq_content_q_q">Q</div>
           <div class="faq_content_q_text">
-            <div  class="faq_content_q_text_plus">-</div>
+            <div class="faq_content_q_text_plus"><img class="plusicon" src="./images/plusplus.png"/></div>
             What's the name of your first domestic animal ?
           </div>
         </div>
         <div class="faq_content_a">
           <div class="faq_content_a_a">A</div>
           <div class="faq_content_a_text">
-            What's the name of your first domestic animal 
+            What's the name of your first domestic animal
           </div>
         </div>
       </div>
-
-
 
       <div class="faq_content">
         <div class="faq_content_q">
           <div class="faq_content_q_q">Q</div>
           <div class="faq_content_q_text">
-            <div class="faq_content_q_text_plus">-</div>
+            <div class="faq_content_q_text_plus"><img class="plusicon" src="./images/plusplus.png"/></div>
             What's the name of your first domestic animal ?
           </div>
         </div>
         <div class="faq_content_a">
           <div class="faq_content_a_a">A</div>
           <div class="faq_content_a_text">
-            What's the name of your first domestic animal 
+            What's the name of your first domestic animal
           </div>
         </div>
       </div>
@@ -135,14 +124,14 @@
         <div class="faq_content_q">
           <div class="faq_content_q_q">Q</div>
           <div class="faq_content_q_text">
-            <div class="faq_content_q_text_plus">+</div>
+            <div class="faq_content_q_text_plus"><img class="plusicon" src="./images/plusplus.png"/></div>
             What's the name of your first domestic animal ?
           </div>
         </div>
         <div class="faq_content_a">
           <div class="faq_content_a_a">A</div>
           <div class="faq_content_a_text">
-            What's the name of your first domestic animal 
+            What's the name of your first domestic animal
           </div>
         </div>
       </div>
@@ -150,14 +139,14 @@
         <div class="faq_content_q">
           <div class="faq_content_q_q">Q</div>
           <div class="faq_content_q_text">
-            <div class="faq_content_q_text_plus">+</div>
+            <div class="faq_content_q_text_plus"><img class="plusicon" src="./images/plusplus.png"/></div>
             What's the name of your first domestic animal ?
           </div>
         </div>
         <div class="faq_content_a">
           <div class="faq_content_a_a">A</div>
           <div class="faq_content_a_text">
-            What's the name of your first domestic animal 
+            What's the name of your first domestic animal
           </div>
         </div>
       </div>
@@ -173,7 +162,7 @@
         <img class="imgBrand" src="./images/brand5.png" />
       </div>
     </section>
-<!-- <section id='contactus' class="contactus">
+    <!-- <section id='contactus' class="contactus">
 
 
 <div class="contactus_bg"></div>
@@ -198,13 +187,7 @@
 
 </section>
  -->
-
-
-
-
-
-
-
+ <h1 style=" text-align: center; color: white;margin: 4rem;">Contact us</h1>
 
     <footer class="footer">
       <div class="footer_top">
@@ -281,29 +264,28 @@
     header.classList.toggle("scrolling-active", windowPosition);
   });
 
-  var test = false
+  var test = false;
 
-const hamburger = ()=>{
+  const hamburger = () => {
+    var myNav = document.getElementById("lol");
+    if (test == false) {
+      myNav.classList.add("show");
+      myNav.classList.remove("hide");
 
-var myNav = document.getElementById("lol")
- if(test== false){
-  myNav.classList.add("show");
-  myNav.classList.remove("hide");
+      test = true;
+    } else if (test == true) {
+      myNav.classList.add("hide");
+      myNav.classList.remove("show");
 
-   test=true
-   
- }else if ( test== true){
-  myNav.classList.add("hide");
-  myNav.classList.remove("show");
+      test = false;
+    }
+    console.log(test);
+  };
+  const closeNav = () =>{
+    var myNav = document.getElementById("lol");
 
-test = false
- }
-console.log(test)
+    myNav.classList.add("hide");
+    myNav.classList.remove("show");
 
-}
-
-
-
-
-
+  }
 </script>

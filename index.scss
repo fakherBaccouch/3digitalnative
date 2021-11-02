@@ -260,13 +260,14 @@ html {
         &_plus {
           margin: auto;
           position: relative;
-          background: #919191;
           margin: 1rem;
-          height: 25px;
-          width: 25px;
+          width: 10%;
           border-radius: 50%;
           text-align: center;
           cursor: pointer;
+        }
+        .plusicon{
+          width: 35px;
         }
       }
     }
@@ -288,7 +289,7 @@ html {
         padding: 2% 2%;
         color: black;
         align-self: flex-end;
-        padding-left: calc(25px + 1rem) !important;      
+        padding-left: calc(25px + 1rem) !important;
       }
     }
   }
@@ -318,22 +319,24 @@ html {
   }
 }
 @media screen and (max-width: 370px) {
- .faq_content_q_q{
-   display: none;
- }
- .faq_content_a_a{
-  display: none;
-}
-.faq_content_q_text,.faq_content_a_text{
-  width: 100%;
-}
+  .faq_content_q_q {
+    display: none;
+  }
+  .faq_content_a_a {
+    display: none;
+  }
+  .faq_content_q_text,
+  .faq_content_a_text {
+    width: 100%;
+  }
 }
 //carousel
 .carousel {
-  height: 100vh;
+  height: 500px;
   width: 100%;
   background-image: url("./images/carouselBg.png");
   display: flex;
+  background-repeat: no-repeat;
   color: white;
   font-size: 1.6rem;
   text-align: center;
@@ -417,7 +420,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
   transition: height 0.5s ease;
   transition: all 0.5s linear;
 }
@@ -465,7 +467,7 @@ header {
 
 #nav-cta {
   display: inline-block;
-  background-color: #8d3131;
+  background-color: #933333;
   color: #fff;
   padding: 1rem 1rem;
   border-radius: 4px;
@@ -491,16 +493,15 @@ header {
 }
 
 .scrolling-active #nav-cta {
-  background-color: #313131;
+  background-color: #933333;
   color: #fff;
 }
 
-.scrolling-active #nav-cta:hover {
-  background-color: #151515;
-}
+// .scrolling-active #nav-cta:hover {
+// }
 
 .scrolling-active .nav-link::after {
-  background-color: #313131;
+  background-color: #933333;
 }
 
 /*Apply styles after scroll end*/
@@ -535,6 +536,10 @@ header {
   position: absolute;
   left: 50%;
   top: 100%;
+  a{
+    height: 100%;
+    background-color: red;
+  }
 }
 .icon-scroll {
   width: 40px;
@@ -567,28 +572,27 @@ header {
   }
 }
 @media screen and (max-width: 933px) {
-   .container{
-       padding: 0;
-   }
-nav{
+  .container {
+    padding: 0;
+  }
+  nav {
     flex-direction: column;
     background-color: black !important;
     height: 5rem !important;
     overflow: hidden;
-
-}
-.nav .logo{
+  }
+  .nav .logo {
     margin-left: 0;
-}
-.nav-list{
+  }
+  .nav-list {
     flex-direction: column !important;
     margin: auto !important;
     height: 50vh;
     justify-content: space-around;
     text-align: center !important;
     margin-bottom: 2rem !important;
-}
-.nav-link {
+  }
+  .nav-link {
     margin: 2rem 2rem !important;
     text-align: center;
     border-bottom: 2px solid #cccc;
@@ -597,53 +601,51 @@ nav{
     font-size: 2rem;
   }
   #nav-cta {
-
     background-color: #8d3131 !important;
-
   }
-  .hamburger{
-      color: red;
-      position: absolute;
-      left: 90%;
-      top: calc(2.5rem - 9px);
-      align-items: center;
-      cursor: pointer;
-      &One,&Two,&Three{
-          height: 3px;
-          width: 25px;
-          background-color: blanchedalmond;
-          margin-bottom: 4px;
-      }
+  .hamburger {
+    position: absolute;
+    left: 90%;
+    top: calc(2.5rem - 9px);
+    align-items: center;
+    cursor: pointer;
+    &One,
+    &Two,
+    &Three {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin-bottom: 4px;
+    }
   }
 }
 
-
-.hide{
-    height: 5rem !important;
+.hide {
+  height: 5rem !important;
 }
-.show{
-    height: auto !important;
+.show {
+  height: auto !important;
 }
 
-.contactus{
+.contactus {
   height: 100vh;
   width: 100%;
   background-color: white;
   padding: 4% 4%;
-   position: relative;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   justify-content: space-around;
-   background-color: #202020;
-  &_bg{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #202020;
+  &_bg {
     background-color: #313131;
     width: 1000px;
     height: 550px;
     border-radius: 20px;
     z-index: 1;
   }
-  &_form{
+  &_form {
     width: 375px;
     height: 55%;
     background-color: #161616;
@@ -651,7 +653,7 @@ nav{
     top: 40%;
     z-index: 2;
     left: 40%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -659,7 +661,7 @@ nav{
     border-radius: 3px;
     color: white;
     text-align: left !important;
-    h1{
+    h1 {
       font-weight: 600;
       font-size: 2.5rem;
       position: relative;
@@ -668,13 +670,11 @@ nav{
       color: white;
       width: 100%;
     }
-     button{
-       width: 100%;
-       font-size: 1.2rem;
-       padding: 2%;
-       font-weight: 400;
-     }
+    button {
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 2%;
+      font-weight: 400;
+    }
   }
-
 }
-

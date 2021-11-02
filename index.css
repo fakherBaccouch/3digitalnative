@@ -352,13 +352,15 @@ html {
 .faq_content_q_text_plus {
   margin: auto;
   position: relative;
-  background: #919191;
   margin: 1rem;
-  height: 25px;
-  width: 25px;
+  width: 10%;
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
+}
+
+.faq_content_q_text .plusicon {
+  width: 35px;
 }
 
 .faq_content_a {
@@ -421,18 +423,20 @@ html {
   .faq_content_a_a {
     display: none;
   }
-  .faq_content_q_text, .faq_content_a_text {
+  .faq_content_q_text,
+  .faq_content_a_text {
     width: 100%;
   }
 }
 
 .carousel {
-  height: 100vh;
+  height: 500px;
   width: 100%;
   background-image: url("./images/carouselBg.png");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-repeat: no-repeat;
   color: white;
   font-size: 1.6rem;
   text-align: center;
@@ -547,7 +551,6 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
   -webkit-transition: height 0.5s ease;
   transition: height 0.5s ease;
   -webkit-transition: all 0.5s linear;
@@ -605,7 +608,7 @@ header {
 
 #nav-cta {
   display: inline-block;
-  background-color: #8d3131;
+  background-color: #933333;
   color: #fff;
   padding: 1rem 1rem;
   border-radius: 4px;
@@ -633,16 +636,12 @@ header {
 }
 
 .scrolling-active #nav-cta {
-  background-color: #313131;
+  background-color: #933333;
   color: #fff;
 }
 
-.scrolling-active #nav-cta:hover {
-  background-color: #151515;
-}
-
 .scrolling-active .nav-link::after {
-  background-color: #313131;
+  background-color: #933333;
 }
 
 /*Apply styles after scroll end*/
@@ -676,6 +675,12 @@ header {
   position: absolute;
   left: 50%;
   top: 100%;
+}
+
+.icon-scroll a,
+.icon-scroll:before a {
+  height: 100%;
+  background-color: red;
 }
 
 .icon-scroll {
@@ -767,7 +772,6 @@ header {
     background-color: #8d3131 !important;
   }
   .hamburger {
-    color: red;
     position: absolute;
     left: 90%;
     top: calc(2.5rem - 9px);
@@ -779,7 +783,7 @@ header {
   .hamburgerOne, .hamburgerTwo, .hamburgerThree {
     height: 3px;
     width: 25px;
-    background-color: blanchedalmond;
+    background-color: white;
     margin-bottom: 4px;
   }
 }
